@@ -1,5 +1,5 @@
 $HostName = @()
-$HostIP = @()
+  $HostIP = @()
 
 Import-Csv ~/scripts/zabbix/inventory.csv |`
     ForEach-Object {
