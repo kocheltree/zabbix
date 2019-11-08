@@ -1,14 +1,22 @@
 #!/usr/bin/pwsh
 
-    $HostName = "HOSTNAME"
-     $LogFile = "c:\zabbix_agentd.log"
-  $ListenPort = "10050"
-      $Server = "alerts.domain.com"
-$ServerActive = "alerts.domain.com"
-    $ListenIP = "192.168.X.Y"
+$HostName = @()
+  $HostIP = @()
 
-$ConfigName = "~/scripts/windows/zabbix/zabbix_agentd.conf"
-  $ListenIP = "192.168.X.Y"
+Import-Csv ~/zabbix/inventory.csv |`
+    ForEach-Object {
+        $HostName += $_.Host
+        $HostIP += $_.IP
+    }
+
+$Config = '
+LogFile = "c:\zabbix_agentd.log"
+ListenPort = "10050"
+Server = "alerts.domain.com"
+ListenIP = $HostIP
+'
+
+$ConfigName = "~/zabbix/zabbix_agentd.conf"
 
 # Add ListenIP value to zabbix_agentd.conf
-Add-Content -Path $fileName -Value "ListenIP=$HostIP"
+Add-Content -Path $fileName -Value $Config
