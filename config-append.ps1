@@ -1,5 +1,17 @@
 #!/usr/bin/pwsh
 
+    ####################################################################################################
+    # Zabbix Installation Script
+    #
+    # 1) Configure Variables
+    # 2) Create temp files
+    # 3) Import data
+    # 4) 
+    # 5) 
+    # 6) 
+    #
+    ####################################################################################################
+
                     $CurrentUser = $env:UserName
                  $ScriptPathName = "testing\zabbix"
              $SscriptWorkingPath = "$Profile\$ScriptPathName"
@@ -32,3 +44,9 @@
     '
     
     Add-Content -Path $ScriptWorkingPath\$RemoteHostConfigName -Value $ConfigAppend
+    
+    
+    # Determine Operating System
+    
+    Test-WSMan -ComputerName $HostName -Authentication default | Select-String -Pattern "ProductVersion"
+    
