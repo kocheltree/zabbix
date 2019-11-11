@@ -13,7 +13,7 @@
     ####################################################################################################
 
                     $CurrentUser = $env:UserName
-                 $ScriptPathName = "testing\zabbix"
+                 $ScriptPathName = "zabbix"
              $SscriptWorkingPath = "$Profile\$ScriptPathName"
                  $ImportFilename = "inventory.csv"
                     $WorkingFQDN = $env:UserDomain
