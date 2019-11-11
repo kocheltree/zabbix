@@ -33,7 +33,7 @@
     LogFile = $RemoteHostWorkingDirectory\$RemoteHostLogname
     ListenIP = $HostIP
     ListenPort = $HostPort
-    Server = $WorkingFQDN
+    Server = "$ZabbixHostName.$WorkingFQDN"
     '
     
     Add-Content -Path $ScriptWorkingPath\$RemoteHostConfigName -Value $ConfigAppend
