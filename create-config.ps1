@@ -1,15 +1,8 @@
 #!/usr/bin/pwsh
 
     ####################################################################################################
-    # Zabbix Installation Script
-    #
-    # 1) Configure Variables
-    # 2) Create temp files
-    # 3) Import data
-    # 4) 
-    # 5) 
-    # 6) 
-    #
+    # Zabbix Installation Script: create-config.ps1
+    # Generate configuration files for deployment to remote hosts.
     ####################################################################################################
 
                     $CurrentUser = $env:UserName
@@ -44,9 +37,4 @@
     '
     
     Add-Content -Path $ScriptWorkingPath\$RemoteHostConfigName -Value $ConfigAppend
-    
-    
-    # Determine Operating System
-    
-    Test-WSMan -ComputerName $HostName -Authentication default | Select-String -Pattern "ProductVersion"
     
