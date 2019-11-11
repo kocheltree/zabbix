@@ -39,5 +39,5 @@
     Server = "$ZabbixHostName.$WorkingFQDN"
     "
     
-    Add-Content -Path $ScriptWorkingPath\$RemoteHostConfigName -Value $ConfigAppend
+    foreach ($HostName in $Array ) { Add-Content -Path $ScriptWorkingPath\$RemoteHostConfigName -Value $ConfigAppend }
     
