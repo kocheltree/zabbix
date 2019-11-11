@@ -2,7 +2,7 @@
 
     ####################################################################################################
     # Zabbix Installation Script: create-config.ps1
-    # Generate configuration files for deployment to remote hosts.
+    # Batch generate configuration files for deployment to remote hosts.
     ####################################################################################################
 
                     $CurrentUser = $env:UserName
